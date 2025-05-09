@@ -126,19 +126,24 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 
 ---
 
-## 📈 Evaluation
+## Evaluation
 
-### 📉 Confusion Matrix
+### Confusion Matrix
 
 | Standard                                         | Normalized                                                             |
 | ------------------------------------------------ | ---------------------------------------------------------------------- |
-| ![Confusion Matrix](Images/confusion_matrix.png) | ![Confusion Matrix Normalized](Images/confusion_matrix_normalized.png) |
+| ![Confusion Matrix](Images/confusion_matrix.png) |                                                                        |
+| *Figure: Standard Confusion Matrix*              | ![Confusion Matrix Normalized](Images/confusion_matrix_normalized.png) |
+| *Figure: Normalized Confusion Matrix*            |                                                                        |
 
-### 🎯 Precision & Recall
+### Precision & Recall
 
 * ![Precision Curve](Images/P_curve.png)
+  *Figure: Precision Curve*
 * ![Recall Curve](Images/R_curve.png)
+  *Figure: Recall Curve*
 * ![PR Curve](Images/PR_curve.png)
+  *Figure: Precision-Recall Curve*
 
 ---
 
@@ -148,28 +153,36 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 
 | Random Predictions                                 | First 10 Predictions                             |
 | -------------------------------------------------- | ------------------------------------------------ |
-| ![10 Random Predict](Images/10_random_predict.png) | ![10 First Predict](Images/10_first_predict.png) |
+| ![10 Random Predict](Images/10_random_predict.png) |                                                  |
+| *Figure: 10 Random Predictions*                    | ![10 First Predict](Images/10_first_predict.png) |
+| *Figure: First 10 Predictions*                     |                                                  |
 
 ### Label & Correlogram Analysis
 
 * ![Labels](Images/labels.jpg)
+  *Figure: Class Label Distribution*
 * ![Correlogram](Images/labels_correlogram.jpg)
+  *Figure: Label Correlogram*
 
 ### Batch Previews
 
-| Training Batch                          | Validation Labels                           | Validation Predictions                         |
-| --------------------------------------- | ------------------------------------------- | ---------------------------------------------- |
-| ![Train Batch](Images/train_batch0.jpg) | ![Val Labels](Images/val_batch0_labels.jpg) | ![Val Predictions](Images/val_batch0_pred.jpg) |
+| Training Batch                                | Validation Labels                              | Validation Predictions |
+| --------------------------------------------- | ---------------------------------------------- | ---------------------- |
+| ![Train Batch](Images/train_batch0.jpg)       |                                                |                        |
+| *Figure: Example Training Batch*              | ![Val Labels](Images/val_batch0_labels.jpg)    |                        |
+| *Figure: Validation Batch Ground Truth Masks* | ![Val Predictions](Images/val_batch0_pred.jpg) |                        |
+| *Figure: Validation Batch Predicted Masks*    |                                                |                        |
 
 ### Overall Results
 
 * ![Results Graph](Images/results.png)
+  *Figure: Results Overview Graph*
 
 ---
 
 ## Acknowledgements
 
-* Dataset from \![Tumor Detection Dataset](https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8)
+* Dataset from [Tumor Detection Dataset](https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8)
 * Inspired by medical segmentation papers and YOLO-based architectures
 * Libraries: `PyTorch`, `OpenCV`, `Matplotlib`, `Seaborn`, `NumPy`, etc.
 
@@ -178,5 +191,3 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-```
