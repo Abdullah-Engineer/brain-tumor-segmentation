@@ -56,6 +56,7 @@ Brain\_Tumor\_Segmentation
 │   ├── val\_batch0\_labels.jpg
 │   ├── val\_batch0\_pred.jpg
 ├── README.md
+├── requirements.txt
 
 ````
 
@@ -65,25 +66,23 @@ Brain\_Tumor\_Segmentation
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/Abdullah-Engineer/brain-tumor-segmentation.git
-cd brain-tumor-segmentation
+   ```bash
+   git clone https://github.com/Abdullah-Engineer/brain-tumor-segmentation.git
+   cd brain-tumor-segmentation
 ````
 
 2. Create a virtual environment and activate it:
 
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
 
 3. Install dependencies:
 
-```bash
-pip install -r requirements.txt
-```
-
-> The notebook also supports running in Google Colab with necessary modifications.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ---
 
@@ -92,7 +91,7 @@ pip install -r requirements.txt
 Run the main notebook to execute the pipeline:
 
 ```bash
-jupyter notebook brain-tumor-segmentation.ipynb
+jupyter notebook Brain_Tumor_Segmentation.ipynb
 ```
 
 Ensure that the dataset is in the correct path and formatted appropriately.
@@ -116,7 +115,7 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 * Visual metrics indicate reliable model performance
 * Confusion matrices and performance curves included
 
-### Metrics:
+### Metrics
 
 * Accuracy
 * Precision, Recall
@@ -130,20 +129,15 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 
 ### Confusion Matrix
 
-| Standard                                         | Normalized                                                             |
-| ------------------------------------------------ | ---------------------------------------------------------------------- |
-| ![Confusion Matrix](Images/confusion_matrix.png) |                                                                        |
-| *Figure: Standard Confusion Matrix*              | ![Confusion Matrix Normalized](Images/confusion_matrix_normalized.png) |
-| *Figure: Normalized Confusion Matrix*            |                                                                        |
+| Standard                                                                     | Normalized                                                                                           |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| ![Confusion Matrix](images/confusion_matrix.png "Standard Confusion Matrix") | ![Confusion Matrix Normalized](images/confusion_matrix_normalized.png "Normalized Confusion Matrix") |
 
 ### Precision & Recall
 
-* ![Precision Curve](Images/P_curve.png)
-  *Figure: Precision Curve*
-* ![Recall Curve](Images/R_curve.png)
-  *Figure: Recall Curve*
-* ![PR Curve](Images/PR_curve.png)
-  *Figure: Precision-Recall Curve*
+* ![Precision Curve](images/P_curve.png "Precision Curve")
+* ![Recall Curve](images/R_curve.png "Recall Curve")
+* ![PR Curve](images/PR_curve.png "Precision-Recall Curve")
 
 ---
 
@@ -151,32 +145,20 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 
 ### Predictions vs Ground Truth
 
-| Random Predictions                                 | First 10 Predictions                             |
-| -------------------------------------------------- | ------------------------------------------------ |
-| ![10 Random Predict](Images/10_random_predict.png) |                                                  |
-| *Figure: 10 Random Predictions*                    | ![10 First Predict](Images/10_first_predict.png) |
-| *Figure: First 10 Predictions*                     |                                                  |
+\| ![10 Random Predictions](images/10_random_predict.png "10 Random Predictions") | ![First 10 Predictions](images/10_first_predict.png "First 10 Predictions") |
 
 ### Label & Correlogram Analysis
 
-* ![Labels](Images/labels.jpg)
-  *Figure: Class Label Distribution*
-* ![Correlogram](Images/labels_correlogram.jpg)
-  *Figure: Label Correlogram*
+* ![Labels](images/labels.jpg "Class Label Distribution")
+* ![Correlogram](images/labels_correlogram.jpg "Label Correlogram")
 
 ### Batch Previews
 
-| Training Batch                                | Validation Labels                              | Validation Predictions |
-| --------------------------------------------- | ---------------------------------------------- | ---------------------- |
-| ![Train Batch](Images/train_batch0.jpg)       |                                                |                        |
-| *Figure: Example Training Batch*              | ![Val Labels](Images/val_batch0_labels.jpg)    |                        |
-| *Figure: Validation Batch Ground Truth Masks* | ![Val Predictions](Images/val_batch0_pred.jpg) |                        |
-| *Figure: Validation Batch Predicted Masks*    |                                                |                        |
+\| ![Train Batch](images/train_batch0.jpg "Example Training Batch") | ![Val Labels](images/val_batch0_labels.jpg "Validation Ground Truth Masks") | ![Val Predictions](images/val_batch0_pred.jpg "Validation Predicted Masks") |
 
 ### Overall Results
 
-* ![Results Graph](Images/results.png)
-  *Figure: Results Overview Graph*
+* ![Results Graph](images/results.png "Results Overview Graph")
 
 ---
 
@@ -191,3 +173,17 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+```
+::contentReference[oaicite:6]{index=6}
+```
+
+[1]: https://stackoverflow.com/questions/63097837/markdown-image-titles?utm_source=chatgpt.com "Markdown image titles - Stack Overflow"
+[2]: https://meta.stackexchange.com/questions/142750/add-image-captions?utm_source=chatgpt.com "Add Image Captions - Meta Stack Exchange"
+[3]: https://github.com/jehna/readme-best-practices?utm_source=chatgpt.com "jehna/readme-best-practices - GitHub"
+[4]: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes?utm_source=chatgpt.com "About READMEs - GitHub Docs"
+[5]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables?utm_source=chatgpt.com "Organizing information with tables - GitHub Docs"
+[6]: https://stackoverflow.com/questions/39378020/how-to-display-table-in-readme-md-file-in-github?utm_source=chatgpt.com "How to display Table in README.md file in Github? - Stack Overflow"
+[7]: https://dev.to/stephencweiss/markdown-image-titles-and-alt-text-5fi1?utm_source=chatgpt.com "Markdown Image Titles and Alt Text - DEV Community"
+[8]: https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/?utm_source=chatgpt.com "How to Write a Good README File for Your GitHub Project"
+[9]: https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax?utm_source=chatgpt.com "Basic writing and formatting syntax - GitHub Docs"
