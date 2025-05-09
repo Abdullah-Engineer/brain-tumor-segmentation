@@ -134,10 +134,13 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 | ------------------------------------------------ | ---------------------------------------------------------------------- |
 | ![Confusion Matrix](Images/confusion_matrix.png) | ![Confusion Matrix Normalized](Images/confusion_matrix_normalized.png) |
 
-### Precision & Recall
-
+### Precision-Confidence Curve
 * ![Precision Curve](Images/P_curve.png)
+
+### Recall-Confidence Curve
 * ![Recall Curve](Images/R_curve.png)
+
+### Precision-Recall Curve
 * ![PR Curve](Images/PR_curve.png)
 
 ---
