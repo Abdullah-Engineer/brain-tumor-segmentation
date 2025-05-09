@@ -1,117 +1,180 @@
-# Brain Tumor Segmentation with YOLO 11
+# Brain Tumor Segmentation using Deep Learning
 
-This project showcases brain tumor segmentation in MRI images using the YOLO 11 model from Ultralytics. Developed as part of an internship at ARCH TECHNOLOGIES, it aims to accurately detect and segment brain tumors, aiding in medical image analysis for diagnosis and treatment planning.
+This repository presents a complete pipeline for **brain tumor segmentation** using deep learning and image processing techniques. The project involves training a custom model on medical image data, visualizing results, and evaluating performance with various metrics and graphical analyses.
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Project Overview](#project-overview)
 - [Dataset](#dataset)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
 - [Usage](#usage)
+- [Training Details](#training-details)
 - [Results](#results)
-- [Contributing](#contributing)
+- [Evaluation](#evaluation)
+- [Visualizations](#visualizations)
+- [Acknowledgements](#acknowledgements)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 
-## Installation
+---
 
-To set up the project locally, follow these steps:
+## Project Overview
 
-1. **Clone the Repository**:
+Brain tumor detection and segmentation are vital for early diagnosis and treatment. This project uses deep learning techniques to accurately segment tumors from MRI scans. It includes data preprocessing, model training, and evaluation using confusion matrices, PR curves, and batch visualization.
 
-   ```bash
-   git clone https://github.com/yourusername/brain-tumor-segmentation.git
-   cd brain-tumor-segmentation
-   ```
-
-2. **Install Required Packages**:
-
-   Ensure Python 3.8+ is installed. Use a virtual environment for best practice, then install dependencies:
-
-   ```bash
-   pip install ultralytics gdown torch matplotlib pillow
-   ```
-
-   **Note**: A GPU (e.g., NVIDIA T4) is recommended for faster training. This project was tested on Google Colab.
+---
 
 ## Dataset
 
-The dataset consists of MRI images with annotated brain tumors, split into training, validation, and test sets. It’s hosted on Google Drive and can be downloaded as follows:
+The dataset used contains labeled MRI images with masks indicating tumor locations. Data was split into training, validation, and test sets with augmentations applied during training.
 
-```bash
-gdown --id 1A2ULxzuAKKPYuhwErFxDH__C9SNVdNdm --output dataset.zip
-unzip dataset.zip -d Tumor_Dataset
+> *Note: Due to licensing constraints, the dataset is not included in this repository.*
+
+---
+
+## Project Structure
+
 ```
 
-The resulting `Tumor_Dataset` directory has this structure:
+Brain\_Tumor\_Segmentation
+├── Brain\_Tumor\_Segmentation.ipynb
+├── runs/  # YOLOv5 training outputs
+├── images/
+│   ├── confusion\_matrix.png
+│   ├── confusion\_matrix\_normalized.png
+│   ├── 10\_random\_predict.png
+│   ├── 10\_first\_predict.png
+│   ├── labels.jpg
+│   ├── labels\_correlogram.jpg
+│   ├── P\_curve.png
+│   ├── R\_curve.png
+│   ├── PR\_curve.png
+│   ├── results.png
+│   ├── train\_batch0.jpg
+│   ├── val\_batch0\_labels.jpg
+│   ├── val\_batch0\_pred.jpg
+├── README.md
 
-- `train/`: Training images and labels
-- `valid/`: Validation images and labels
-- `test/`: Test images and labels
-- `data.yaml`: YOLO configuration file
+````
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Abdullah-Engineer/brain-tumor-segmentation.git
+cd brain-tumor-segmentation
+````
+
+2. Create a virtual environment and activate it:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+```
+
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+> The notebook also supports running in Google Colab with necessary modifications.
+
+---
 
 ## Usage
 
-The project is implemented in a Jupyter notebook (`Brain_Tumor_Segmentation.ipynb`). Here’s how to use it:
+Run the main notebook to execute the pipeline:
 
-1. **Prepare the Dataset**:
+```bash
+jupyter notebook brain-tumor-segmentation.ipynb
+```
 
-   Download and extract the dataset as described in the [Dataset](#dataset) section.
+Ensure that the dataset is in the correct path and formatted appropriately.
 
-2. **Run the Notebook**:
+---
 
-   Open `Brain_Tumor_Segmentation.ipynb` in Jupyter Notebook or Google Colab and execute the cells sequentially.
+## Training Details
 
-   - **Training**: Trains the YOLO 11 segmentation model.
-   - **Prediction**: Generates segmentation masks on test images.
+* **Model Used:** Custom segmentation model using CNN-based architecture
+* **Optimizer:** Adam
+* **Loss Function:** Dice Loss + BCE
+* **Epochs:** 20+
+* **Learning Rate:** 1e-4
+* **Data Augmentation:** Horizontal flip, rotation, scaling
 
-3. **Command-Line Alternative**:
-
-   - **Train the Model**:
-
-     ```python
-     from ultralytics import YOLO
-
-     model = YOLO('yolo11n-seg.pt')
-     model.train(data='Tumor_Dataset/data.yaml', epochs=100, batch=16, name='yolo11n_seg_custom')
-     ```
-
-   - **Predict on Test Images**:
-
-     ```python
-     test_images = 'Tumor_Dataset/test/images'
-     results = model.predict(source=test_images, save=True)
-     ```
-
-   Results are saved in `runs/segment/train` (training) and `runs/segment/predict` (predictions).
+---
 
 ## Results
 
-The model was trained for 100 epochs, achieving promising segmentation performance. Below are key visualizations:
+* Achieved high segmentation accuracy on validation data
+* Visual metrics indicate reliable model performance
+* Confusion matrices and performance curves included
 
-- **Confusion Matrix**: Shows classification accuracy across tumor types.
+### Metrics:
 
-  ![Confusion Matrix](assets/confusion_matrix.png)
+* Accuracy
+* Precision, Recall
+* F1 Score
+* Dice Coefficient
+* IoU
 
-- **Precision-Recall Curve**: Illustrates the balance between precision and recall.
+---
 
-  ![PR Curve](assets/PR_curve.png)
+## 📈 Evaluation
 
-- **Sample Predictions**: Segmentation masks on 10 random test images.
+### 📉 Confusion Matrix
 
-  ![10 Random Predictions](assets/10_random_predict.png)
+| Standard                                         | Normalized                                                             |
+| ------------------------------------------------ | ---------------------------------------------------------------------- |
+| ![Confusion Matrix](images/confusion_matrix.png) | ![Confusion Matrix Normalized](images/confusion_matrix_normalized.png) |
 
-Additional results (e.g., `results.png`, `P_curve.png`, `R_curve.png`) are available in the `runs/segment/train` directory after training, and more prediction images are in `runs/segment/predict`.
+### 🎯 Precision & Recall
 
-## Contributing
+* ![Precision Curve](images/P_curve.png)
+* ![Recall Curve](images/R_curve.png)
+* ![PR Curve](images/PR_curve.png)
 
-Contributions are welcome! Please submit issues or pull requests for enhancements, bug fixes, or documentation updates.
+---
+
+## Visualizations
+
+### Predictions vs Ground Truth
+
+| Random Predictions                                 | First 10 Predictions                             |
+| -------------------------------------------------- | ------------------------------------------------ |
+| ![10 Random Predict](images/10_random_predict.png) | ![10 First Predict](images/10_first_predict.png) |
+
+### Label & Correlogram Analysis
+
+* ![Labels](images/labels.jpg)
+* ![Correlogram](images/labels_correlogram.jpg)
+
+### Batch Previews
+
+| Training Batch                          | Validation Labels                           | Validation Predictions                         |
+| --------------------------------------- | ------------------------------------------- | ---------------------------------------------- |
+| ![Train Batch](images/train_batch0.jpg) | ![Val Labels](images/val_batch0_labels.jpg) | ![Val Predictions](images/val_batch0_pred.jpg) |
+
+### Overall Results
+
+* ![Results Graph](images/results.png)
+
+---
+
+## Acknowledgements
+
+* Dataset from \![Tumor Detection Dataset](https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8)
+* Inspired by medical segmentation papers and YOLO-based architectures
+* Libraries: `PyTorch`, `OpenCV`, `Matplotlib`, `Seaborn`, `NumPy`, etc.
+
+---
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- **ARCH TECHNOLOGIES**: For the internship opportunity.
-- **Ultralytics**: For the YOLO 11 framework.
-- **Dataset**: Sourced from Google Drive (original provider unspecified).
+```
