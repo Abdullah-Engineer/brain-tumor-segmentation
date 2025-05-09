@@ -132,13 +132,13 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 
 | Standard                                         | Normalized                                                             |
 | ------------------------------------------------ | ---------------------------------------------------------------------- |
-| ![Confusion Matrix](images/confusion_matrix.png) | ![Confusion Matrix Normalized](images/confusion_matrix_normalized.png) |
+| ![Confusion Matrix](Images/confusion_matrix.png) | ![Confusion Matrix Normalized](Images/confusion_matrix_normalized.png) |
 
 ### 🎯 Precision & Recall
 
-* ![Precision Curve](images/P_curve.png)
-* ![Recall Curve](images/R_curve.png)
-* ![PR Curve](images/PR_curve.png)
+* ![Precision Curve](Images/P_curve.png)
+* ![Recall Curve](Images/R_curve.png)
+* ![PR Curve](Images/PR_curve.png)
 
 ---
 
@@ -148,22 +148,22 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 
 | Random Predictions                                 | First 10 Predictions                             |
 | -------------------------------------------------- | ------------------------------------------------ |
-| ![10 Random Predict](images/10_random_predict.png) | ![10 First Predict](images/10_first_predict.png) |
+| ![10 Random Predict](Images/10_random_predict.png) | ![10 First Predict](Images/10_first_predict.png) |
 
 ### Label & Correlogram Analysis
 
-* ![Labels](images/labels.jpg)
-* ![Correlogram](images/labels_correlogram.jpg)
+* ![Labels](Images/labels.jpg)
+* ![Correlogram](Images/labels_correlogram.jpg)
 
 ### Batch Previews
 
 | Training Batch                          | Validation Labels                           | Validation Predictions                         |
 | --------------------------------------- | ------------------------------------------- | ---------------------------------------------- |
-| ![Train Batch](images/train_batch0.jpg) | ![Val Labels](images/val_batch0_labels.jpg) | ![Val Predictions](images/val_batch0_pred.jpg) |
+| ![Train Batch](Images/train_batch0.jpg) | ![Val Labels](Images/val_batch0_labels.jpg) | ![Val Predictions](Images/val_batch0_pred.jpg) |
 
 ### Overall Results
 
-* ![Results Graph](images/results.png)
+* ![Results Graph](Images/results.png)
 
 ---
 
