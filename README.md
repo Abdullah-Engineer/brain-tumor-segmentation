@@ -28,7 +28,9 @@ Brain tumor detection and segmentation are vital for early diagnosis and treatme
 
 The dataset used contains labeled MRI images with masks indicating tumor locations. Data was split into training, validation, and test sets with augmentations applied during training.
 
-> *Note: Due to licensing constraints, the dataset is not included in this repository.*
+The dataset is available at the following link:
+
+[Tumor Detection Dataset](https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8)
 
 ---
 
