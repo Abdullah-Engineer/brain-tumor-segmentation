@@ -174,7 +174,7 @@ Ensure that the dataset is in the correct path and formatted appropriately.
 
 * Dataset from \![Tumor Detection Dataset](https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8)
 * Inspired by medical segmentation papers and YOLO-based architectures
-* Libraries: `PyTorch`, `OpenCV`, `Matplotlib`, `Seaborn`, `NumPy`, etc.
+* Libraries: `Ultralytics`, `Torch`, `OS`, `GDown`, `ZipFile`, etc.
 
 ---
 
